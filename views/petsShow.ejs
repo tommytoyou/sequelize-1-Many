@@ -1,17 +1,16 @@
-
-<h1 class='text-lg-center'><%= user.firstName %>'s pets</h1>
+<h1 class='text-lg-center'><%= pet.name %>'s toy</h1>
 <div class="card" style="width: 18rem;">
     <ul class="list-group list-group-flush">
-      <% for (let i=0; i< user.pets.length; i++) { %>
-        <li class="list-group-item"><%= user.pets[i].name %></li>
+      <% for (let i=0; i< pet.toys.length; i++) { %>
+        <li class="list-group-item"><%= pet.toys[i].color %><%= pet.toys[i].type %></li>
       <% } %>
     </ul>
 </div>
-<form action='/users/<%= user.id %>/addPet' method='POST'>
+<form action='pets/<%= pet.id %>/addToy' method='POST'>
     <div class="mb-3">
-      <label for="name" class="form-label">Pet Name</label>
+      <label for="type" class="form-label">toys name</label>
       <input type="text" class="form-control" id="type" aria-describedby="emailHelp" name='name'>
-      <div class="form-text">Never share your toys with anyone else.</div>
+      <div class="form-text">We'll never share your dog with anyone else.</div>
     </div>
     <div class="mb-3">
         <label for="species" class="form-s">Species</label>

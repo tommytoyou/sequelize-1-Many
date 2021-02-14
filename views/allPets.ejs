@@ -1,0 +1,10 @@
+<h1 class='text-center'>Pets</h1>
+<ul class="list-group">
+<% allPets.forEach( pet => { %>
+  <li class="list-group-item">
+      <a href='/pets/<%= pet.id %>'>
+        <%= pet.name %>  <%= pet.species %>
+      </a>
+  </li>
+<% }) %>
+</ul>

@@ -17,12 +17,14 @@ app.set('view engine', 'ejs');
 app.use(ejsLayouts);
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
+app.use('/users', controllers.users)
+app.use('/pets', controllers.pets)
 
 // 5 - Routes (controllers)
 app.get('/', (req, res) => {
     res.send('Welcome to my App'); // Yo, Rome: what is this doing?
 });
-app.use('/users', controllers.users)
+
 // TODO set up controllers
 
 const PORT = process.env.PORT || 8000;
